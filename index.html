@@ -127,17 +127,6 @@
     </style>
 </head>
 
-<script defer>
-    const b64email = "bWVyaXMuYmFodGlAZ21haWwuY29t";
-    const b64phone = 'KzQ2IDczMyA4NiAxMSAxMw=='
-    requestAnimationFrame(() => {
-        document.querySelector('#contact-info').innerHTML = `
-        Email: ${atob(b64email)} | Phone: ${atob(b64phone)}
-    `;
-    });
-
-</script>
-
 <body>
     <main>
         <section class="contact-info">
@@ -302,5 +291,15 @@
         </section>
     </main>
 </body>
+<script defer>
+    const b64email = "bWVyaXMuYmFodGlAZ21haWwuY29t";
+    const b64phone = 'KzQ2IDczMyA4NiAxMSAxMw=='
+    requestAnimationFrame(() => {
+        document.querySelector('#contact-info').innerHTML = `
+        Email: ${atob(b64email)} | Phone: ${atob(b64phone)}
+    `;
+    });
+
+</script>
 
 </html>
