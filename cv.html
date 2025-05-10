@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meris Bahtijaragic - CV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #333;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #000;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 1.4em;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        p,
+        li {
+            font-size: 1em;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info,
+        .summary,
+        .skills,
+        .experience,
+        .projects,
+        .education {
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        .skills ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills li {
+            background: #f4f4f4;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+
+        .no-print {
+            display: inline;
+        }
+
+        @media print {
+            body {
+                padding: 10px;
+                font-size: 10pt;
+            }
+
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            h3 {
+                font-size: 1em;
+            }
+
+            .skills li {
+                background: none;
+                padding: 0;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+
+<script defer>
+    const b64email = "bWVyaXMuYmFodGlAZ21haWwuY29t";
+    const b64phone = 'KzQ2IDczMyA4NiAxMSAxMw=='
+    requestAnimationFrame(() => {
+        document.querySelector('#contact-info').innerHTML = `
+        Email: ${atob(b64email)} | Phone: ${atob(b64phone)}
+    `;
+    });
+
+</script>
+
+<body>
+    <main>
+        <section class="contact-info">
+            <h1>Meris Bahtijaragic</h1>
+            <p>Senior Software Developer</p>
+            <p id="contact-info">Email: HIDDEN | Phone: HIDDEN</p>
+            <p>
+                <a
+                    href="https://www.linkedin.com/in/meris-bahtijaragic-342a5883/">linkedin.com/in/meris-bahtijaragic-342a5883/</a>
+            </p>
+            <p>
+                <a href="https://github.com/merisbahti">github.com/merisbahti</a>
+            </p>
+        </section>
+
+        <section class="summary">
+            <h2>Professional Summary</h2>
+            <p>I am a highly skilled and versatile Senior Software Developer with extensive experience in both frontend
+                and backend development, as well as security engineering. I have a proven ability to lead development
+                efforts, improve code quality, and implement efficient solutions across various tech stacks. I am
+                passionate about creating developer tools, optimizing performance, and applying security best
+                practices.</p>
+        </section>
+
+        <section class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Svelte</li>
+                <li>Typescript</li>
+                <li>JavaScript</li>
+                <li>Node.js</li>
+                <li>Functional Programming</li>
+                <li>Java</li>
+                <li>SQL</li>
+                <li>Git</li>
+                <li>Scala</li>
+                <li>Mentoring</li>
+                <li>Software Architecture</li>
+                <li>Continuous Integration (CI)</li>
+                <li>Continuous Delivery (CD)</li>
+                <li>Java</li>
+                <li>Python</li>
+            </ul>
+        </section>
+
+        <section class="experience">
+            <h2>Professional Experience</h2>
+
+
+
+
+            <article class="experience-item">
+                <h3>StickerApp AB, Lomma - Full-stack Developer</h3>
+                <p>MAR 2024 - CURRENT</p>
+                <p>Assignment with StickerApp</p>
+                <ul>
+                    <li>Worked closely with the content production team to develop a full global CMS solution deployed
+                        to 12+
+                        markets.</li>
+                    <li>Established easy to follow code standards and automated them with tools such as TypeScript,
+                        eslint and GitHub actions.</li>
+                    <li>Svelte, Docker, Redis, Typescript.</li>
+                </ul>
+            </article>
+
+            <article class="experience-item">
+                <h3>Apple Maps, Malmö - Full-stack Developer</h3>
+                <p>MAR 2023 - MAR 2024</p>
+                <p>Assignment with Apple Maps</p>
+                <ul>
+                    <li>Scala, Apache Spark, Big Data, Python, React, Node, Java, Typescript.</li>
+                </ul>
+            </article>
+
+            <article class="experience-item">
+                <h3>Spotify AB, Remote - Senior Security Engineer</h3>
+                <p>APR 2021 - MAR 2023</p>
+                <p>Assignment and employment with Spotify</p>
+                <ul>
+                    <li>Develop the product called Backstage - with a focus on security.</li>
+                    <li>Applying my knowledge of security to build automated tools to help developers write secure
+                        code.</li>
+                    <li>Consulting on security incidents.</li>
+                    <li>Increased the maintainability of their data pipelines using Scio, Flyte, Luigi and Airflow.</li>
+                    <li>Scala, Luigi, Scio, Airflow, React, Node, Java, Python, Typescript, Google Cloud, BigQuery.
+                    </li>
+                </ul>
+            </article>
+
+            <article class="experience-item">
+                <h3>Apple Maps, Malmö– Frontend developer</h3>
+                <p>OCT 2019 - APR 2021</p>
+                <p>Assignment with Apple Maps</p>
+                <ul>
+                    <li>Using technologies such as: React, Scala, Typescript.</li>
+                    <li>Software architect role where I’m responsible for CI, code health, and development of code.
+                    </li>
+                </ul>
+            </article>
+
+            <article class="experience-item">
+                <h3>Prisjakt Sverige AB, Malmö– Software Developer</h3>
+                <p>FEB 2019 - OCT 2019</p>
+                <ul>
+                    <li>Improved the developer experience by creating developer tools, guidelines, and a KPI dashboard.
+                    </li>
+                    <li>Measured and improved the runtime performance of the React application.</li>
+                    <li>Additionally integrated Typescript into existing non-trivial parts of the system and
+                        development workflow.</li>
+                </ul>
+            </article>
+
+            <article class="experience-item">
+                <h3>TrueSec, Malmö - Cyber Security Software Developer</h3>
+                <p>FEB 2018 - FEB 2019</p>
+                <ul>
+                    <li>Focusing on Cyber Security.</li>
+                    <li>Development of a web-application inspection service.</li>
+                    <li>Varied tasks ranging from API and web development to server operations and security
+                        consulting.</li>
+                </ul>
+            </article>
+
+            <article class="experience-item">
+                <h3>Digifort AB, Malmö – Software Developer</h3>
+                <p>APRIL 2014 - FEB 2018</p>
+                <ul>
+                    <li>Main focus was developing a web-application security monitoring platform.</li>
+                    <li>Varied tasks ranging from API and web development to server operations and databases.</li>
+                    <li>I started as an only employee.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="projects">
+            <h2>Personal Projects</h2>
+            <article class="project-item">
+                <h3>Lisp(ish) compiler and VM</h3>
+                <p>I developed a LISP compiler and virtual machine in Rust for educational purposes.
+                    The VM compiler supports WASM and each instruction can be stepped through in a visual tool.
+                    It even has support for compile-time macros.</p>
+                <p>
+                    <a
+                        href="https://github.com/merisbahti/rust-lisp-wasm">https://github.com/merisbahti/rust-lisp-wasm</a>
+                </p>
+            </article>
+            <article class="project-item">
+                <h3>Efficient state management in React</h3>
+                <p>Developed a highly efficient state management library in react. It is an exploration of functional
+                    lenses and performant real-time edits of huge data structures.</p>
+                <p>
+                    <a href="https://github.com/merisbahti/klyva">https://github.com/merisbahti/klyva</a>
+                </p>
+            </article>
+
+        </section>
+
+        <section class="education">
+            <h2>Education</h2>
+            <p>Master of Science in Computer Science and Engineering</p>
+            <p>Lunds Tekniska Högskola | Lund, Skåne | 2011 - 2016</p>
+            <p>Thesis: Intrusion Detection System by Statistical Learning</p>
+            <p>Trained an AI to classify hacking attempts.</p>
+            <p>https://lup.lub.lu.se/student-papers/search/publication/8887271</p>
+        </section>
+    </main>
+</body>
+
+</html>
