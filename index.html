@@ -31,17 +31,22 @@
         h2 {
             font-size: 1.4em;
             border-bottom: 1px solid #ccc;
-            padding-bottom: 5px;
+            padding-bottom: 4px;
         }
 
         h3 {
             font-size: 1.2em;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
         p,
         li {
             font-size: 1em;
+        }
+
+        p,
+        ul {
+            margin: 4px 0;
         }
 
         a {
@@ -53,20 +58,12 @@
             text-decoration: underline;
         }
 
-        .contact-info,
-        .summary,
-        .skills,
-        .experience,
-        .projects,
-        .education {
+
+        section {
             margin-bottom: 20px;
         }
 
-        .contact-info p {
-            margin: 5px 0;
-        }
-
-        .skills ul {
+        ul.tags {
             list-style: none;
             padding: 0;
             display: flex;
@@ -74,62 +71,17 @@
             gap: 8px;
         }
 
-        .skills li {
+        ul.tags li {
             background: #f4f4f4;
             padding: 2px 8px;
             border-radius: 3px;
-        }
-
-        .no-print {
-            display: inline;
-        }
-
-        .education p {
-            margin: 4px 0;
-        }
-
-        @media print {
-            body {
-                padding: 10px;
-                font-size: 10pt;
-            }
-
-            a {
-                color: #000;
-                text-decoration: none;
-            }
-
-            .no-print {
-                display: none;
-            }
-
-            h1 {
-                font-size: 1.5em;
-            }
-
-            h2 {
-                font-size: 1.2em;
-            }
-
-            h3 {
-                font-size: 1em;
-            }
-
-            .skills li {
-                background: none;
-                padding: 0;
-            }
-
-            .page-break {
-                page-break-before: always;
-            }
         }
     </style>
 </head>
 
 <body>
     <main>
-        <section class="contact-info">
+        <section>
             <h1>Meris Bahtijaragic</h1>
             <p>Senior Software Developer | MSc. Computer Science</p>
             <p id="contact-info">Email: HIDDEN | Phone: HIDDEN</p>
@@ -142,7 +94,7 @@
             </p>
         </section>
 
-        <section class="summary">
+        <section>
             <h2>Professional Summary</h2>
             <p>I am a highly skilled and versatile Senior Software Developer with an MSc in Computer Science and
                 extensive experience in both frontend and backend development, as well as security engineering. Known
@@ -151,9 +103,9 @@
                 creating developer tools, optimizing performance, and applying security best practices.</p>
         </section>
 
-        <section class="skills">
+        <section>
             <h2>Skills</h2>
-            <ul>
+            <ul class="tags">
                 <li>Svelte</li>
                 <li>Typescript</li>
                 <li>JavaScript</li>
@@ -172,12 +124,12 @@
             </ul>
         </section>
 
-        <section class="experience">
+        <section>
             <h2>Professional Experience</h2>
 
-            <article class="experience-item">
-                <h3>StickerApp AB, Lomma - Full-stack Developer</h3>
-                <p>March 2024 - Current</p>
+            <article>
+                <h3>StickerApp AB - Full-stack Developer</h3>
+                <p>Lomma, March 2024 - Current</p>
                 <p>Assignment with StickerApp</p>
                 <ul>
                     <li>Worked closely with the content production team to develop a full global CMS solution deployed
@@ -189,18 +141,18 @@
                 </ul>
             </article>
 
-            <article class="experience-item">
-                <h3>Apple Maps, Malmö - Full-stack Developer</h3>
-                <p>March 2023 - March 2024</p>
+            <article>
+                <h3>Apple Maps - Full-stack Developer</h3>
+                <p>Malmö, March 2023 - March 2024</p>
                 <p>Assignment with Apple Maps</p>
                 <ul>
                     <li>Scala, Apache Spark, Big Data, Python, React, Node, Java, Typescript.</li>
                 </ul>
             </article>
 
-            <article class="experience-item">
-                <h3>Spotify AB, Remote - Senior Security Engineer</h3>
-                <p>April 2021 - March 2023</p>
+            <article>
+                <h3>Spotify AB - Senior Security Engineer</h3>
+                <p>Remote, April 2021 - March 2023</p>
                 <p>Assignment and employment with Spotify</p>
                 <ul>
                     <li>Develop the product called Backstage - with a focus on security.</li>
@@ -213,9 +165,9 @@
                 </ul>
             </article>
 
-            <article class="experience-item">
-                <h3>Apple Maps, Malmö - Frontend developer</h3>
-                <p>October 2019 - April 2021</p>
+            <article>
+                <h3>Apple Maps - Frontend developer</h3>
+                <p>Malmö, October 2019 - April 2021</p>
                 <p>Assignment with Apple Maps</p>
                 <ul>
                     <li>Using technologies such as: React, Scala, Typescript.</li>
@@ -224,9 +176,9 @@
                 </ul>
             </article>
 
-            <article class="experience-item">
-                <h3>Prisjakt Sverige AB, Malmö - Software Developer</h3>
-                <p>February 2019 - October 2019</p>
+            <article>
+                <h3>Prisjakt Sverige AB - Software Developer</h3>
+                <p>Malmö, February 2019 - October 2019</p>
                 <ul>
                     <li>Improved the developer experience by creating developer tools, guidelines, and a KPI dashboard.
                     </li>
@@ -236,9 +188,9 @@
                 </ul>
             </article>
 
-            <article class="experience-item">
-                <h3>TrueSec, Malmö - Cyber Security Software Developer</h3>
-                <p>February 2018 - February 2019</p>
+            <article>
+                <h3>TrueSec - Cyber Security Software Developer</h3>
+                <p>Malmö, February 2018 - February 2019</p>
                 <ul>
                     <li>Focusing on Cyber Security.</li>
                     <li>Development of a web-application inspection service.</li>
@@ -247,9 +199,9 @@
                 </ul>
             </article>
 
-            <article class="experience-item">
-                <h3>Digifort AB, Malmö - Software Developer</h3>
-                <p>April 2014 - February 2018</p>
+            <article>
+                <h3>Digifort AB - Software Developer</h3>
+                <p>Lund, April 2014 - February 2018</p>
                 <ul>
                     <li>Main focus was developing a web-application security monitoring platform.</li>
                     <li>Varied tasks ranging from API and web development to server operations and databases.</li>
@@ -258,9 +210,9 @@
             </article>
         </section>
 
-        <section class="projects">
+        <section>
             <h2>Personal Projects</h2>
-            <article class="project-item">
+            <article>
                 <h3>Lisp(ish) compiler and VM</h3>
                 <p>I developed a LISP compiler and virtual machine in Rust for educational purposes.
                     The VM compiler supports WASM and each instruction can be stepped through in a visual tool.
@@ -270,7 +222,7 @@
                         href="https://github.com/merisbahti/rust-lisp-wasm">https://github.com/merisbahti/rust-lisp-wasm</a>
                 </p>
             </article>
-            <article class="project-item">
+            <article>
                 <h3>Efficient state management in React</h3>
                 <p>Developed a highly efficient state management library in react. It is an exploration of functional
                     lenses and performant real-time edits of huge data structures.</p>
@@ -281,7 +233,7 @@
 
         </section>
 
-        <section class="education">
+        <section>
             <h2>Education</h2>
             <h3>Master of Science in Computer Science and Engineering</h3>
             <p>Lunds Tekniska Högskola | Lund, Skåne | 2011 - 2016</p>
