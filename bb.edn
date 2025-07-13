@@ -1,0 +1,5 @@
+{:paths ["."]
+ :deps {hiccup/hiccup {:mvn/version "2.0.0"}}
+ :tasks {gen-html
+         {:requires ([gen-html :as gen-html])
+          :task (gen-html/main)}}}

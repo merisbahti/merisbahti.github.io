@@ -1,0 +1,4 @@
+.aider*
+.clj-kondo/
+.lsp/
+.nrepl-port
