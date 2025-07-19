@@ -3,9 +3,16 @@
    [hiccup.page :refer [html5]]
    [hiccup2.core :as h]))
 
-(def actual_doc
+(def document
   (list
    [:head
+    [:meta {:charset "UTF-8"}]
+    [:meta {:name "viewport", :content "width=device-width, initial-scale=1.0"}]
+    [:link
+     {:rel "icon",
+      :href
+      "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23007bff'/><text x='50' y='55' font-family='Arial, sans-serif' font-size='50' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'>MB</text></svg>",
+      :type "image/svg+xml"}]
     [:link {:rel "stylesheet"
             :href "style.css"}]
     [:script {:defer true}
@@ -200,4 +207,4 @@ requestAnimationFrame(() => {
        "lup.lub.lu.se/student-papers/search/publication/8887271"]]]]))
 
 (defn main []
-  (spit "myhtml.html" (str (html5 (h/html actual_doc)))))
+  (spit "myhtml.html" (str (html5 (h/html document)))))
