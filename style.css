@@ -1,0 +1,101 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333;
+}
+
+h1,
+h2,
+h3 {
+  color: #000;
+}
+
+h1 {
+  font-size: 1.8em;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.4em;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 4px;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin-bottom: 4px;
+}
+
+p,
+li {
+  font-size: 1em;
+}
+
+p,
+ul {
+  margin: 4px 0;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+article {
+  page-break-inside: avoid;
+}
+
+section.experience > article > p:nth-child(2) {
+  color: #666;
+  font-style: italic;
+}
+
+ul.tags {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+ul.tags li {
+  background: #f4f4f4;
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+ul.title {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+ul.title li:not(:last-child)::after {
+  content: "·";
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+@media (max-width: 600px) {
+  ul.title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  ul.title li:not(:last-child)::after {
+    content: none;
+  }
+}

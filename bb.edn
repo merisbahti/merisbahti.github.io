@@ -1,0 +1,10 @@
+{:paths ["."]
+ :deps {hiccup/hiccup {:mvn/version "2.0.0"}
+        com.nextjournal/beholder {:mvn/version "1.0.3"}}
+
+ :tasks {gen-html
+         {:requires ([gen-html :as gen-html])
+          :task (gen-html/generate-html)}
+         gen-html:watch
+         {:requires ([gen-html :as gen-html])
+          :task (gen-html/watch)}}}
