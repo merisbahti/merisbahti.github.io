@@ -23,7 +23,6 @@
                                 (println "skipping update to " (str path))))
                             "./")))]
     (.start (Thread.
-
              (fn []
                (reset! watcher (watch-fn)))))
     (let [input-atom (atom "")]
