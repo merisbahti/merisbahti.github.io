@@ -1,9 +1,8 @@
 (ns gen-html
   (:require
+   [document :refer [document]]
    [hiccup.page :refer [html5]]
-   [hiccup2.core :as h]
-   [nextjournal.beholder :as beholder]
-   [document :refer [document]]))
+   [nextjournal.beholder :as beholder]))
 
 (def output-file "index.html")
 (defn generate-html []
