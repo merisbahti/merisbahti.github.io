@@ -7,8 +7,8 @@
 
 (def output-file "index.html")
 (defn generate-html []
-  (println "generating " output-file)
-  (spit output-file (str (html5 (h/html document)))))
+  (println "generating" output-file)
+  (spit output-file (str (html5 document))))
 
 (defn watch []
   (generate-html)
