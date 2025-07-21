@@ -29,6 +29,3 @@
     (Thread/sleep (* 24 60 60000))
     (when @watcher (beholder/stop @watcher))
     (println "thread dead")))
-
-(defn main []
-  (generate-html))

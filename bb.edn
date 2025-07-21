@@ -4,7 +4,7 @@
 
  :tasks {gen-html
          {:requires ([gen-html :as gen-html])
-          :task (gen-html/main)}
+          :task (gen-html/generate-html)}
          gen-html:watch
          {:requires ([gen-html :as gen-html])
           :task (gen-html/watch)}}}
