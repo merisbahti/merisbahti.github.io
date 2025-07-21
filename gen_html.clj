@@ -23,8 +23,12 @@
                                 (println "skipping update to " (str path))))
                             "./")))]
     (.start (Thread.
+
              (fn []
                (reset! watcher (watch-fn)))))
-    (Thread/sleep (* 24 60 60000))
-    (when @watcher (beholder/stop @watcher))
-    (println "thread dead")))
+    (let [input-atom (atom "")]
+      (while
+       (do (reset! input-atom (read-line))
+           (println "type q to quit, read the following: " @input-atom)
+           (not (= @input-atom "q")))
+        (beholder/stop @watcher)))))
