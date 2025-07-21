@@ -2,9 +2,8 @@
   (:require
    [hiccup.page :refer [html5]]
    [hiccup2.core :as h]
-   [nextjournal.beholder :as beholder])
-  (:require
-   [document :refer [document]] :reload))
+   [nextjournal.beholder :as beholder]
+   [document :refer [document]]))
 
 (def output-file "index.html")
 (defn generate-html []
@@ -18,6 +17,7 @@
                    (reset! watcher
                            (beholder/watch
                             (fn [{path :path type :type}]
+                              (load-string (slurp "document.clj"))
                               (if
                                (not (= (str path) output-file))
                                 (generate-html)
