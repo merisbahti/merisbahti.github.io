@@ -1,7 +1,10 @@
 (ns gen-html
   (:require
-   [hiccup.page :refer [html5]]
-   [nextjournal.beholder :as beholder]))
+   [hiccup.page :refer [html5]]))
+
+(require '[babashka.pods :as pods])
+(pods/load-pod 'org.babashka/fswatcher "0.0.5")
+(require '[pod.babashka.fswatcher :as fw])
 
 (def output-file "index.html")
 
@@ -13,14 +16,12 @@
 (defn watch []
   (generate-html)
   (->
-   (fn [] (beholder/watch
-           (fn [{path :path type :type}]
-
-             (if
-              (not (= (str path) output-file))
-               (generate-html)
-               (println "skipping update to " (str path))))
-           "./"))
+   (fn [] (fw/watch "./"
+                    (fn [{path :path}]
+                      (if
+                       (not (= path output-file))
+                        (generate-html)
+                        (println "skipping update to " path)))))
    Thread.
    .start)
   (let [input-atom (atom "")]
