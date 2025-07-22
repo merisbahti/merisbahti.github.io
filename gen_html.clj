@@ -11,23 +11,19 @@
 
 (defn watch []
   (generate-html)
-  (let [watcher (atom nil)]
-    (->
-     (fn [] (reset!
-             watcher
-             (beholder/watch
-              (fn [{path :path type :type}]
-                (load-file "document.clj")
-                (if
-                 (not (= (str path) output-file))
-                  (generate-html)
-                  (println "skipping update to " (str path))))
-              "./")))
-     Thread.
-     .start)
-    (let [input-atom (atom "")]
-      (while
-       (do (reset! input-atom (read-line))
-           (println "type q to quit, read the following: " @input-atom)
-           (not (= @input-atom "q")))
-        (beholder/stop @watcher)))))
+  (->
+   (fn [] (beholder/watch
+           (fn [{path :path type :type}]
+             (load-file "document.clj")
+             (if
+              (not (= (str path) output-file))
+               (generate-html)
+               (println "skipping update to " (str path))))
+           "./"))
+   Thread.
+   .start)
+  (let [input-atom (atom "")]
+    (while
+     (do (reset! input-atom (read-line))
+         (println "type q to quit, read the following: " @input-atom)
+         (not (= @input-atom "q"))))))
