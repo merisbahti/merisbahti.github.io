@@ -7,8 +7,8 @@
 
 (defn generate-html []
   (require '[document :as doc] :reload-all :reload)
-  (resolve 'document/document)
-  (spit output-file (str (html5 (eval 'document/document)))))
+  (resolve 'doc/document)
+  (spit output-file (str (html5 (eval 'doc/document)))))
 
 (defn watch []
   (generate-html)
