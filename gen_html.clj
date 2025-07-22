@@ -1,20 +1,21 @@
 (ns gen-html
   (:require
-   [document :refer [document]]
    [hiccup.page :refer [html5]]
    [nextjournal.beholder :as beholder]))
 
 (def output-file "index.html")
+
 (defn generate-html []
-  (println "generating" output-file)
-  (spit output-file (str (html5 document))))
+  (require '[document :as doc] :reload-all :reload)
+  (resolve 'document/document)
+  (spit output-file (str (html5 (eval 'document/document)))))
 
 (defn watch []
   (generate-html)
   (->
    (fn [] (beholder/watch
            (fn [{path :path type :type}]
-             (load-file "document.clj")
+
              (if
               (not (= (str path) output-file))
                (generate-html)
