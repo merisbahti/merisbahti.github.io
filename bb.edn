@@ -1,6 +1,6 @@
 {:paths ["."]
  :deps {hiccup/hiccup {:mvn/version "2.0.0"}}
-
+ :pods {org.babashka/fswatcher {:version "0.0.5"}}
  :tasks {gen-html
          {:requires ([gen-html :as gen-html])
           :task (gen-html/generate-html)}

@@ -1,10 +1,7 @@
 (ns gen-html
   (:require
-   [hiccup.page :refer [html5]]))
-
-(require '[babashka.pods :as pods])
-(pods/load-pod 'org.babashka/fswatcher "0.0.5")
-(require '[pod.babashka.fswatcher :as fw])
+   [hiccup.page :refer [html5]]
+   [pod.babashka.fswatcher :as fw]))
 
 (def output-file "index.html")
 
