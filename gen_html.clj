@@ -6,9 +6,9 @@
 (def output-file "index.html")
 
 (defn generate-html []
-  (require '[document :as doc] :reload-all :reload)
-  (resolve 'doc/document)
-  (spit output-file (str (html5 (eval 'doc/document)))))
+  (require '[document :refer [document]] :reload-all :reload)
+  (resolve 'document)
+  (spit output-file (str (html5 (eval 'document)))))
 
 (defn watch []
   (generate-html)
