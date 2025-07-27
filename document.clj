@@ -1,5 +1,21 @@
 (ns document)
 
+(defn- experience
+  [{company :company
+    role :role
+    body :body
+    location :location
+    from-time :from-time
+    to-time :to-time
+    tags :tags}]
+
+  `[:article
+    [:h3 ~(str company " - " role)]
+    [:p ~(str location ", " from-time " - " to-time)]
+    ~@body
+    [:ul.tags
+     ~(for [tag tags] [:li tag])]])
+
 (def document
   (list
    [:head
@@ -11,8 +27,7 @@
       :href
       "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23007bff'/><text x='50' y='55' font-family='Arial, sans-serif' font-size='50' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'>MB</text></svg>",
       :type "image/svg+xml"}]
-    [:link {:rel "stylesheet"
-            :href "style.css"}]
+    [:link {:rel "stylesheet" :href "style.css"}]
     [:script {:defer true}
      "const b64email = \"bWVyaXMuYmFodGlAZ21haWwuY29t\";
 const b64phone = \"KzQ2IDczMyA4NiAxMSAxMw==\";
@@ -68,56 +83,58 @@ requestAnimationFrame(() => {
        [:li "Python"]]]
      [:section.experience
       [:h2 "Professional Experience"]
-      [:article
-       [:h3 "StickerApp AB - Full-stack Developer"]
-       [:p "Lomma, March 2024 - June 2025"]
-       [:p "Assignment with StickerApp"]
-       [:ul
-        [:li
-         "Worked closely with the content production team to develop a full global CMS solution deployed to 12+ markets."]
-        [:li
-         "Established easy to follow code standards and automated them with tools such as TypeScript, eslint and GitHub actions."]]
-       [:ul.tags
-        [:li "Svelte"]
-        [:li "Docker"]
-        [:li "Redis"]
-        [:li "TypeScript"]]]
-      [:article
-       [:h3 "Apple Maps - Full-stack Developer"]
-       [:p "Malmö, March 2023 - March 2024"]
-       [:p "Assignment with Apple Maps"]
-       [:ul.tags
-        [:li "Scala"]
-        [:li "Apache Spark"]
-        [:li "Big Data"]
-        [:li "Python"]
-        [:li "React"]
-        [:li "Node.js"]
-        [:li "Java"]
-        [:li "Typescript"]]]
-      [:article
-       [:h3 "Spotify AB - Senior Security Engineer"]
-       [:p "Remote, April 2021 - March 2023"]
-       [:p "Assignment and employment with Spotify"]
-       [:ul
-        [:li "Developed the product called Backstage, with a focus on security."]
-        [:li
-         "Applied my knowledge of security to build automated tools to help developers write secure code."]
-        [:li "Consulted on security incidents."]
-        [:li
-         "Increased the maintainability of their data pipelines using Scio, Flyte, Luigi, and Airflow."]]
-       [:ul.tags
-        [:li "Scala"]
-        [:li "Luigi"]
-        [:li "Scio"]
-        [:li "Airflow"]
-        [:li "React"]
-        [:li "Node.js"]
-        [:li "Java"]
-        [:li "Python"]
-        [:li "Typescript"]
-        [:li "Google Cloud"]
-        [:li "BigQuery"]]]
+      (experience {:company "StickerApp AB"
+                   :role "Full-stack Developer"
+                   :location "Lomma"
+                   :from-time "March 2024"
+                   :to-time "June 2025"
+                   :body [[:p "Assignment with StickerApp"]
+                          [:ul
+                           [:li
+                            "Worked closely with the content production team to develop a full global CMS solution deployed to 12+ markets."]
+                           [:li
+                            "Established easy to follow code standards and automated them with tools such as TypeScript, eslint and GitHub actions."]]]
+
+                   :tags ["Svelte" "Docker" "Redis" "TypeScript"]})
+      (experience {:company "Apple Maps"
+                   :role "Full-stack Developer"
+                   :location "Malmö"
+                   :from-time "March 2023"
+                   :to-time "March 2024"
+                   :body [[:p "Assignment with Apple Maps"]]
+                   :tags ["Scala"
+                          "Apache Spark"
+                          "Big Data"
+                          "Python"
+                          "React"
+                          "Node.js"
+                          "Java"
+                          "Typescript"]})
+      (experience {:company "Spotify AB"
+                   :location "Remote"
+                   :role "Senior Security Engineer"
+                   :from-time "April 2021"
+                   :to-time "March 2023"
+                   :body [[:p "Assignment and employment with Spotify"]
+                          [:ul
+                           [:li "Developed the product called Backstage, with a focus on security."]
+                           [:li
+                            "Applied my knowledge of security to build automated tools to help developers write secure code."]
+                           [:li "Consulted on security incidents."]
+                           [:li
+                            "Increased the maintainability of their data pipelines using Scio, Flyte, Luigi, and Airflow."]]]
+                   :tags ["Scala"
+                          "Luigi"
+                          "Scio"
+                          "Airflow"
+                          "React"
+                          "Node.js"
+                          "Java"
+                          "Python"
+                          "Typescript"
+                          "Google Cloud"
+                          "BigQuery"]})
+
       [:article
        [:h3 "Apple Maps - Frontend developer"]
        [:p "Malmö, October 2019 - April 2021"]

@@ -1,0 +1,5 @@
+{:paths ["./"]
+ :deps {hiccup/hiccup {:mvn/version "2.0.0"}
+        com.nextjournal/beholder {:mvn/version "1.0.3"}}
+
+ :aliases {:watch {:exec-fn gen-html/watch :exec-args []}}}
