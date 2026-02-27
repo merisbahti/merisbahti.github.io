@@ -102,6 +102,19 @@
         margin-right: 8px;
       }
 
+      .header-section {
+        display: flex;
+        gap: 20px;
+      }
+
+      .header-section img {
+        height: 160px;
+        width: auto;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 4px;
+      }
+
       @media (max-width: 600px) {
         ul.title {
           flex-direction: column;
@@ -111,29 +124,41 @@
         ul.title li:not(:last-child)::after {
           content: none;
         }
+
+        .header-section {
+          flex-direction: column-reverse;
+        }
+
+        .header-section img {
+          width: 80px;
+          height: 80px;
+        }
       }
     </style>
   </head>
 
   <body>
     <main>
-      <section>
-        <h1>Meris Bahtijaragic</h1>
-        <ul class="title">
-          <li>Senior Software Developer</li>
-          <li>MSc. Computer Science</li>
-        </ul>
-        <ul class="title">
-          <li id="hidden-email">Email: HIDDEN</li>
-          <li id="hidden-phone">Phone: HIDDEN</li>
-        </ul>
-        <p>
-          <a href="https://www.linkedin.com/in/meris-bahtijaragic/"
-          >linkedin.com/in/meris-bahtijaragic/</a>
-        </p>
-        <p>
-          <a href="https://github.com/merisbahti">github.com/merisbahti</a>
-        </p>
+      <section class="header-section">
+        <img src="A7407810.jpg" alt="Meris Bahtijaragic">
+        <div>
+          <h1>Meris Bahtijaragic</h1>
+          <ul class="title">
+            <li>Senior Software Developer</li>
+            <li>MSc. Computer Science</li>
+          </ul>
+          <ul class="title">
+            <li id="hidden-email">Email: HIDDEN</li>
+            <li id="hidden-phone">Phone: HIDDEN</li>
+          </ul>
+          <p>
+            <a href="https://www.linkedin.com/in/meris-bahtijaragic/"
+            >linkedin.com/in/meris-bahtijaragic/</a>
+          </p>
+          <p>
+            <a href="https://github.com/merisbahti">github.com/merisbahti</a>
+          </p>
+        </div>
       </section>
 
       <section>
@@ -180,7 +205,10 @@
           <p>Assignment with StickerApp</p>
           <ul>
             <li>Developed a CMS and a new checkout system.</li>
-            <li>Introduced code quality practices and AI-assisted development workflows.</li>
+            <li>
+              Introduced code quality practices and AI-assisted development
+              workflows.
+            </li>
           </ul>
           <ul class="tags">
             <li>Svelte</li>
